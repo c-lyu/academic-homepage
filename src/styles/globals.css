@@ -69,14 +69,27 @@ body::before {
   @apply border-16 border-accent-primary pointer-events-none z-9999;
 }
 
-/* On mobile, use absolute positioning to prevent iOS overflow issues */
+/* On mobile, split frame into separate borders to keep top fixed */
 @media (max-width: 768px) {
   body {
     @apply relative;
   }
 
+  /* Remove the single border frame */
   body::before {
-    @apply absolute;
+    @apply border-0;
+  }
+
+  /* Top border - stays fixed */
+  body::before {
+    @apply content-[''] fixed top-0 left-0 right-0 h-0;
+    @apply border-t-16 border-accent-primary pointer-events-none z-9999;
+  }
+
+  /* Left, right, bottom borders - absolute positioning */
+  body::after {
+    @apply content-[''] absolute top-0 left-0 right-0 bottom-0;
+    @apply border-l-16 border-r-16 border-b-16 border-accent-primary pointer-events-none z-9999;
   }
 }
 
