@@ -1,6 +1,21 @@
 ---
-// Redirect root to default language (English) with proper base path
+// For static builds, we need to generate an HTML redirect page
 const base = import.meta.env.BASE_URL;
 const enPath = base.endsWith('/') ? `${base}en/` : `${base}/en/`;
-return Astro.redirect(enPath, 302);
 ---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content={`0; url=${enPath}`} />
+    <link rel="canonical" href={enPath} />
+    <script is:inline define:vars={{ enPath }}>
+      window.location.href = enPath;
+    </script>
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href={enPath}>homepage</a>...</p>
+  </body>
+</html>
