@@ -40,5 +40,7 @@ export function getLocalizedPath(path: string, lang: Language): string {
   const basePath = base.endsWith('/') ? base.slice(0, -1) : base;
 
   // Always add language prefix for all locales (prefixDefaultLocale: true)
-  return `${basePath}/${lang}${path}`;
+  // Ensure path ends with trailing slash (for trailingSlash: 'always' config)
+  const normalizedPath = path.endsWith('/') ? path : `${path}/`;
+  return `${basePath}/${lang}${normalizedPath}`;
 }

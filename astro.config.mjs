@@ -18,7 +18,9 @@ export default defineConfig({
     },
     routing: {
       prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
     },
   },
+  trailingSlash: 'always',
   integrations: [sitemap()],
 });
