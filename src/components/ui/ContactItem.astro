@@ -1,0 +1,50 @@
+---
+import "../../styles/globals.css";
+import Icon from "./Icon.astro";
+
+interface Props {
+  icon: string;
+  text: string;
+  link?: string;
+  class?: string;
+}
+
+const { icon, text, link, class: className = "" } = Astro.props;
+
+const Element = link ? "a" : "div";
+---
+
+<Element
+  href={link}
+  target={link ? "_blank" : undefined}
+  rel={link ? "noopener noreferrer" : undefined}
+  class:list={["contact-item", link && "contact-item--link", className]}
+>
+  <Icon name={icon} size={16} class="contact-item__icon" />
+  <span class="contact-item__text">{text}</span>
+</Element>
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .contact-item {
+    @apply flex items-center gap-2 h-4 no-underline text-bw-primary;
+  }
+
+  .contact-item--link {
+    @apply cursor-pointer duration-150 ease-in-out;
+  }
+
+  .contact-item--link:hover {
+    @apply text-bw-secondary;
+  }
+
+  .contact-item__icon {
+    @apply w-4 h-4 shrink-0 flex items-center justify-center text-inherit;
+  }
+
+  .contact-item__text {
+    @apply text-xs font-normal leading-none whitespace-nowrap;
+  }
+</style>

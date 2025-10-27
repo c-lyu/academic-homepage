@@ -1,0 +1,66 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  href?: string;
+  text: string;
+  size?: "s" | "m";
+  type?: "external" | "internal";
+  class?: string;
+}
+
+const {
+  href,
+  text,
+  size = "s",
+  type = "external",
+  class: className = "",
+} = Astro.props;
+
+const Element = href ? "a" : "span";
+const iconName =
+  type === "external" ? "ri:arrow-right-up-line" : "ri:arrow-right-line";
+---
+
+<Element
+  href={href}
+  target={href && type === "external" ? "_blank" : undefined}
+  rel={href && type === "external" ? "noopener noreferrer" : undefined}
+  class:list={[
+    "link-button",
+    `link-button--${size}`,
+    `link-button--${type}`,
+    className,
+  ]}
+>
+  <span class="link-button__text">{text}</span>
+  <Icon name={iconName} size={14} class="link-button__icon" />
+</Element>
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .link-button {
+    @apply inline-flex items-center gap-0.5 bg-bw-surface text-bw-primary;
+    @apply font-semibold no-underline border-none;
+    @apply transition-colors duration-150 cursor-pointer;
+    @apply hover:bg-accent-primary hover:text-bw-background;
+  }
+
+  .link-button--s {
+    @apply text-xs px-2 h-4;
+  }
+
+  .link-button--m {
+    @apply text-xs px-2.5 h-6;
+  }
+
+  .link-button__text {
+    @apply whitespace-nowrap;
+  }
+
+  .link-button__icon {
+    @apply w-4 h-4 shrink-0;
+  }
+</style>

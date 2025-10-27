@@ -1,0 +1,57 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import TimelineItem from "../ui/TimelineItem.astro";
+import { marked } from "marked";
+
+interface NewsItem {
+  date: string;
+  content: string;
+}
+
+interface Props {
+  title: string;
+  items: NewsItem[];
+  class?: string;
+}
+
+const { title, items, class: className = "" } = Astro.props;
+---
+
+{items && items.length > 0 && (
+  <section class:list={["news-list", className]}>
+    <SectionHeader title={title} />
+
+    <div class="news-list__items">
+      {
+        items.map((item) => (
+          <TimelineItem date={item.date}>
+            <div class="news-list__item">
+              <p class="news-list__content" set:html={marked.parseInline(item.content)} />
+            </div>
+          </TimelineItem>
+        ))
+      }
+    </div>
+  </section>
+)}
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .news-list {
+    @apply p-4 w-full flex flex-col gap-4;
+  }
+
+  .news-list__items {
+    @apply flex flex-col gap-3;
+  }
+
+  .news-list__item {
+    @apply flex flex-col gap-1 w-full;
+  }
+
+  .news-list__content {
+    @apply text-base font-normal text-bw-primary;
+  }
+</style>

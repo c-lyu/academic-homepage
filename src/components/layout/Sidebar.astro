@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+import ContactItem from "../ui/ContactItem.astro";
+import type { ImageMetadata } from "astro";
+
+interface Contact {
+  type: string;
+  icon: string;
+  text: string;
+  link?: string;
+}
+
+interface Props {
+  photo: string;
+  contacts: Contact[];
+  class?: string;
+}
+
+const { photo, contacts, class: className = "" } = Astro.props;
+
+// Dynamically import images from src/assets/images/
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/*.{jpg,jpeg,png,webp}', { eager: true });
+
+// Get the filename from the photo path
+const photoFilename = photo.split('/').pop() || '';
+
+// Find the matching image
+let imageSource: ImageMetadata | undefined;
+for (const [path, module] of Object.entries(images)) {
+  if (path.includes(photoFilename)) {
+    imageSource = module.default;
+    break;
+  }
+}
+---
+
+<aside class:list={["sidebar", className]} transition:persist="sidebar">
+  <div class="sidebar__photo">
+    {imageSource ? (
+      <Image
+        src={imageSource}
+        alt="Profile photo"
+        widths={[88, 128]}
+        sizes="(max-width: 768px) 88px, 128px"
+        format="webp"
+        loading="eager"
+      />
+    ) : (
+      <img src={photo} alt="Profile photo" />
+    )}
+  </div>
+
+  <div class="sidebar__contacts">
+    {
+      contacts.map((contact) => (
+        <ContactItem
+          icon={contact.icon}
+          text={contact.text}
+          link={contact.link}
+        />
+      ))
+    }
+  </div>
+</aside>
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .sidebar {
+    @apply flex flex-row md:flex-col w-fit px-4 md:px-0 items-start gap-6;
+  }
+
+  .sidebar__photo {
+    @apply w-22 h-22 md:w-32 md:h-32 shrink-0 overflow-hidden relative;
+  }
+
+  .sidebar__photo img,
+  .sidebar__photo :global(img) {
+    @apply w-full h-full object-cover object-center;
+  }
+
+  .sidebar__contacts {
+    @apply flex flex-col gap-2 w-full;
+  }
+</style>

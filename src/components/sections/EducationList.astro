@@ -1,0 +1,105 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import TimelineItem from "../ui/TimelineItem.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n";
+
+interface EducationItem {
+  dateRange: string;
+  institution: string;
+  degree?: string;
+  thesis?: string;
+  location: string;
+}
+
+interface Props {
+  title: string;
+  items: EducationItem[];
+  class?: string;
+}
+
+const { title, items, class: className = "" } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+{
+  items && items.length > 0 && (
+    <section class:list={["education-list", className]}>
+      <SectionHeader title={title} />
+
+      <div class="education-list__items">
+        {items.map((item) => (
+          <TimelineItem date={item.dateRange}>
+            <div class="education-list__item">
+              <p class="education-list__institution">{item.institution}</p>
+              {item.thesis && (
+                <p class="education-list__thesis">
+                  <span class="education-list__thesis-label">
+                    {t("education.thesis")}
+                  </span>
+                  {item.thesis}
+                </p>
+              )}
+              <div class="education-list__degree_location">
+                <p class:list={["education-list__degree_location_item", lang === "zh" && "not-italic! mt-1"]}>
+                  {item.degree}
+                </p>
+                <span class="education-list__degree_location_item_separator" />
+                <p class:list={["education-list__degree_location_item", lang === "zh" && "not-italic! mt-1"]}>
+                  {item.location}
+                </p>
+              </div>
+            </div>
+          </TimelineItem>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .education-list {
+    @apply p-4 w-full flex flex-col gap-4;
+  }
+
+  .education-list__items {
+    @apply flex flex-col gap-3;
+  }
+
+  .education-list__item {
+    @apply flex flex-col gap-1 w-full;
+  }
+
+  .education-list__institution {
+    @apply text-base font-semibold text-bw-primary;
+  }
+
+  .education-list__thesis-label {
+    @apply mr-2 px-1.5 py-0.5 bg-bw-surface;
+    @apply text-xs font-semibold text-bw-secondary;
+  }
+
+  .education-list__thesis {
+    @apply text-base font-normal text-bw-primary;
+  }
+
+  .education-list__degree_location {
+    @apply flex flex-row gap-2;
+  }
+
+  .education-list__degree_location_item {
+    @apply text-sm font-normal text-bw-secondary italic;
+  }
+
+  .education-list__degree_location_item_separator {
+    @apply text-sm font-normal text-bw-secondary;
+  }
+
+  .education-list__degree_location_item_separator::before {
+    @apply content-['|'];
+  }
+</style>

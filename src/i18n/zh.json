@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "首页",
+    "publications": "发表",
+    "teaching": "教学",
+    "services": "服务",
+    "cv": "简历"
+  },
+  "sections": {
+    "education": "教育背景",
+    "news": "最新动态",
+    "publications": "发表",
+    "awards": "获奖",
+    "projects": "项目",
+    "lectures": "授课",
+    "supervision": "论文指导",
+    "reviewing": "审稿活动",
+    "more": "更多"
+  },
+  "education": {
+    "thesis": "论文"
+  },
+  "footer": {
+    "copyright": "@2025 {name} | 慕尼黑"
+  },
+  "theme": {
+    "toggle": "切换主题",
+    "light": "浅色模式",
+    "dark": "深色模式"
+  },
+  "language": {
+    "toggle": "切换语言"
+  },
+  "links": {
+    "paper": "论文",
+    "code": "代码",
+    "doi": "DOI",
+    "arxiv": "arXiv",
+    "website": "网站",
+    "github": "GitHub"
+  },
+  "awards": {
+    "firstPlace": "第一名",
+    "secondPlace": "第二名",
+    "thirdPlace": "第三名"
+  }
+}

@@ -1,0 +1,112 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import MainLayout from "../../components/layout/MainLayout.astro";
+import Bio from "../../components/sections/Bio.astro";
+import EducationList from "../../components/sections/EducationList.astro";
+import NewsList from "../../components/sections/NewsList.astro";
+import PublicationsList from "../../components/sections/PublicationsList.astro";
+import AwardsList from "../../components/sections/AwardsList.astro";
+// import ProjectsList from "../../components/sections/ProjectsList.astro";
+import { useTranslations, type Language } from "../../i18n";
+
+export async function getStaticPaths() {
+  return [{ params: { lang: "en" } }, { params: { lang: "zh" } }];
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = useTranslations(lang);
+
+// Get profile data
+const profile = await getEntry("profile", lang);
+const profileBio = profile?.body || "";
+
+// Get content collections by language-specific collection names
+const education = (
+  await getCollection(`education-${lang}` as "education-en" | "education-zh")
+).sort((a, b) => b.data.order - a.data.order);
+
+const news = (await getCollection(`news-${lang}` as "news-en" | "news-zh"))
+  .sort((a, b) => b.data.order - a.data.order)
+  .slice(0, 3); // Show only 3 latest news items
+
+const publications = (
+  await getCollection(
+    `publications-${lang}` as "publications-en" | "publications-zh",
+    ({ data }) => data.featured === true
+  )
+).sort((a, b) => b.data.order - a.data.order); // Show all featured publications
+
+const awards = (
+  await getCollection(`awards-${lang}` as "awards-en" | "awards-zh")
+).sort((a, b) => b.data.order - a.data.order);
+
+// const projects = (
+//   await getCollection(`projects-${lang}` as "projects-en" | "projects-zh")
+// ).sort((a, b) => b.data.order - a.data.order);
+
+// Transform data for components - YAML data is already in data, no body field
+const educationItems = education.map((e) => ({
+  dateRange: e.data.dateRange,
+  institution: e.data.institution,
+  degree: e.data.degree,
+  location: e.data.location,
+  thesis: e.data.description
+}));
+
+const newsItems = news.map((n) => ({
+  date: n.data.date,
+  content: n.data.content
+}));
+
+const publicationItems = publications.map((p) => ({
+  date: String(p.data.date),
+  citation: p.data.citation,
+  links: p.data.links
+}));
+
+const awardItems = awards.map((a) => ({
+  year: a.data.year,
+  title: a.data.title,
+  description: a.data.description,
+  badge: a.data.badge
+}));
+
+// const projectItems = projects.map((p) => ({
+//   dateRange: p.data.dateRange,
+//   title: p.data.title,
+//   description: p.data.description,
+//   collaboration: p.data.collaboration
+// }));
+---
+
+<BaseLayout
+  title={`${profile?.data.name} - ${t("nav.home")}`}
+  description={profileBio}
+  lang={lang}
+>
+  <MainLayout
+    name={profile?.data.name || ""}
+    lang={lang}
+    currentPath="/"
+    photo={profile?.data.photo || ""}
+    contacts={profile?.data.contacts || []}
+  >
+    <Bio content={profileBio} />
+
+    <EducationList title={t("sections.education")} items={educationItems} />
+
+    <NewsList title={t("sections.news")} items={newsItems} />
+
+    <PublicationsList
+      title={t("sections.publications")}
+      moreText={t("sections.more")}
+      moreLink={`/${lang}/publications`}
+      items={publicationItems}
+    />
+
+    <AwardsList title={t("sections.awards")} items={awardItems} />
+
+    <!-- <ProjectsList title={t("sections.projects")} items={projectItems} /> -->
+  </MainLayout>
+</BaseLayout>

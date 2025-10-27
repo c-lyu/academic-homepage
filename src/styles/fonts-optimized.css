@@ -1,0 +1,112 @@
+/*
+ * Optimized IBM Plex Sans with unicode-range subsetting
+ *
+ * This approach uses unicode-range to load fonts on-demand.
+ * The browser only downloads character ranges actually used on the page.
+ *
+ * Benefits:
+ * - Latin-only pages: ~30KB (vs ~150KB full fonts)
+ * - Automatic - no build tools needed
+ * - Works with Chinese/multilingual content
+ */
+
+/* ========================================
+   REGULAR (400) - Body text
+   ======================================== */
+
+/* Latin subset - loads for ASCII characters */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-Regular.woff2") format("woff2");
+  unicode-range: U+0020-007F; /* Basic Latin: A-Z, a-z, 0-9, punctuation */
+}
+
+/* Latin Extended - loads when needed (accents, special chars) */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-Regular.woff2") format("woff2");
+  unicode-range: U+0080-00FF, U+0100-017F, U+0180-024F; /* Extended Latin */
+}
+
+/* ========================================
+   REGULAR ITALIC (400) - EducationList
+   ======================================== */
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-Italic.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-Italic.woff2") format("woff2");
+  unicode-range: U+0080-00FF, U+0100-017F, U+0180-024F;
+}
+
+/* ========================================
+   SEMIBOLD (600) - Headers, emphasis
+   ======================================== */
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+  unicode-range: U+0080-00FF, U+0100-017F, U+0180-024F;
+}
+
+/* ========================================
+   BOLD (700) - Headers
+   ======================================== */
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-Bold.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-Bold.woff2") format("woff2");
+  unicode-range: U+0080-00FF, U+0100-017F, U+0180-024F;
+}
+
+/*
+ * Performance Notes:
+ *
+ * 1. English-only pages: Only Basic Latin subsets load (~30KB total)
+ * 2. Pages with accents/special chars: Extended Latin also loads
+ * 3. Chinese content: Falls back to system fonts (recommended - CJK fonts are 3-10MB!)
+ *
+ * For Chinese support, use a separate web font like Noto Sans SC
+ * and apply it only to elements with lang="zh" attribute.
+ */

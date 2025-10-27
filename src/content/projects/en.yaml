@@ -1,0 +1,33 @@
+# Projects YAML
+
+- id: popgen
+  dateRange: "2025"
+  title: "PopGen - Data-driven Synthetic Population Generation"
+  collaboration: "Technical University of Munich & Technical University of Denmark"
+  description: "Improving the fidelity and credibility of synthetic population for transport simulation models. Proposed a tabular generative model based on flow matching tailored for synthetic population, featuring explicit feature dependency modelling with graph neural network & controlled generation constrained by input marginals."
+  # role: Project Lead
+  order: 4
+
+- id: panamera
+  dateRange: "2021-2024"
+  title: PANAMERA - Development of Predictive Maintenance Toolkit for Automotive Applications
+  collaboration: Technical University of Munich, Porsche & Fraunhofer
+  description: Developing a reusable pipeline for automotive predictive maintenance. Responsible for the algorithm design of the project; Proposed a pipeline combining automatic data labelling based on matrix factorization and an anomaly detection model based on adaptive time-frequency analysis and an attention-free all-MLP model.
+  # role: Subproject Lead
+  order: 3
+
+- id: dynamic-capacity
+  dateRange: 2019-2020
+  title: Dynamic Capacity Analysis of Transportation Networks in Digitalized Environments
+  collaboration: Southeast University & Huawei
+  description: Improving the accuracy of network capacity estimation integrating multi-source big data. Designed a traffic state estimation model incorporating both demand-side and supply-side predictors, which allows more accurate estimation of dynamic network capacity.
+  # role: Project Member
+  order: 2
+
+- id: bus-od-inference
+  dateRange: 2018-2019
+  title: Bus Passenger OD Inference under the Condition of Incomplete Information
+  collaboration: Southeast University & Didi Chuxing
+  description: Inferring the bus passenger OD in the absence of complete ticket validation data. Optimized the efficiency of the bus passenger OD inference through a trip chaining algorithm.
+  # role: Project Member
+  order: 1

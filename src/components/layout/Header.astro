@@ -1,0 +1,311 @@
+---
+import { useTranslations, type Language, getLocalizedPath } from "../../i18n";
+
+interface Props {
+  name: string;
+  lang: Language;
+  currentPath: string;
+}
+
+const { name, lang, currentPath } = Astro.props;
+const t = useTranslations(lang);
+
+const navItems = [
+  { key: "home", path: "/", external: false },
+  { key: "publications", path: "/publications", external: false },
+  { key: "teaching", path: "/teaching", external: false },
+  { key: "services", path: "/services", external: false },
+  // { key: "cv", path: "/cv.pdf", external: true },
+];
+
+// Normalize currentPath by removing language prefix for comparison
+const normalizedPath = currentPath.replace(`/${lang}`, "") || "/";
+
+const otherLang = lang === "en" ? "zh" : "en";
+---
+
+<header class="header">
+  <div class="header__content">
+    <a href={getLocalizedPath("/", lang)} class="header__logo">
+      {name}
+    </a>
+
+    <div class="header__right">
+      <nav class="header__nav">
+        {
+          navItems.map((item) => (
+            <a
+              href={
+                item.external ? item.path : getLocalizedPath(item.path, lang)
+              }
+              class:list={[
+                "header__nav-item",
+                normalizedPath === item.path && "header__nav-item--active",
+              ]}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
+            >
+              {t(`nav.${item.key}`)}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="header__controls">
+        <button
+          id="theme-toggle"
+          class="header__control-btn"
+          aria-label={t("theme.toggle")}
+          title={t("theme.toggle")}
+        >
+          <svg
+            id="theme-icon-sun"
+            class="header__icon"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 1V2.5M8 13.5V15M15 8H13.5M2.5 8H1M12.5 12.5L11.5 11.5M4.5 4.5L3.5 3.5M12.5 3.5L11.5 4.5M4.5 11.5L3.5 12.5M11 8C11 9.65685 9.65685 11 8 11C6.34315 11 5 9.65685 5 8C5 6.34315 6.34315 5 8 5C9.65685 5 11 6.34315 11 8Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          <svg
+            id="theme-icon-moon"
+            class="header__icon"
+            style="display: none;"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 8.5C13.8 11.5 11.3 14 8.3 14C5.3 14 2.8 11.5 2.8 8.5C2.8 5.5 5.3 3 8.3 3C8.5 3 8.7 3 8.9 3.05C8.2 3.8 7.8 4.8 7.8 5.9C7.8 8.1 9.6 9.9 11.8 9.9C12.6 9.9 13.3 9.7 14 9.3V8.5Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </button>
+
+        <a
+          href={getLocalizedPath(normalizedPath, otherLang)}
+          class="header__control-btn"
+          aria-label={t("language.toggle")}
+          title={t("language.toggle")}
+        >
+          <span class="header__lang-text"
+            >{otherLang === "zh" ? "中" : "En"}</span
+          >
+        </a>
+      </div>
+
+      <button
+        id="mobile-menu-toggle"
+        class="header__hamburger"
+        aria-label="Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu__content">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.external ? item.path : getLocalizedPath(item.path, lang)}
+            class="mobile-menu__item"
+            target={item.external ? "_blank" : undefined}
+            rel={item.external ? "noopener noreferrer" : undefined}
+          >
+            {t(`nav.${item.key}`)}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script>
+  function initHeader() {
+    // Theme toggle with icon update
+    const themeToggle = document.getElementById("theme-toggle");
+    const sunIcon = document.getElementById("theme-icon-sun");
+    const moonIcon = document.getElementById("theme-icon-moon");
+
+    function updateThemeIcons() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      if (sunIcon && moonIcon) {
+        if (currentTheme === "dark") {
+          sunIcon.style.display = "none";
+          moonIcon.style.display = "block";
+        } else {
+          sunIcon.style.display = "block";
+          moonIcon.style.display = "none";
+        }
+      }
+    }
+
+    // Initial icon state
+    updateThemeIcons();
+
+    // Update icons when theme changes
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        // Wait for theme to change, then update icons
+        setTimeout(updateThemeIcons, 10);
+      });
+    }
+
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const hamburger = document.querySelector(".header__hamburger");
+
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.contains("mobile-menu--open");
+
+        if (isOpen) {
+          mobileMenu.classList.remove("mobile-menu--open");
+          hamburger?.classList.remove("header__hamburger--open");
+        } else {
+          mobileMenu.classList.add("mobile-menu--open");
+          hamburger?.classList.add("header__hamburger--open");
+        }
+      });
+
+      // Close menu when clicking a link
+      const menuItems = mobileMenu.querySelectorAll(".mobile-menu__item");
+      menuItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          mobileMenu.classList.remove("mobile-menu--open");
+          hamburger?.classList.remove("header__hamburger--open");
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+        if (
+          !mobileMenu.contains(target) &&
+          !mobileMenuToggle.contains(target)
+        ) {
+          mobileMenu.classList.remove("mobile-menu--open");
+          hamburger?.classList.remove("header__hamburger--open");
+        }
+      });
+    }
+  }
+
+  // Run on page load
+  initHeader();
+
+  // Re-run after page transitions
+  document.addEventListener("astro:after-swap", initHeader);
+</script>
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .header {
+    @apply fixed top-0 left-0 right-0;
+    @apply min-h-(--header-mobile-height) md:min-h-(--header-height);
+    @apply border-transparent z-10 duration-200 backdrop-blur-xl bg-bw-background/50;
+  }
+
+  .header__content {
+    @apply flex items-center justify-between h-12 mx-10 mt-6 md:mx-24 md:mt-12;
+  }
+
+  .header__logo {
+    @apply text-base font-bold text-bw-primary no-underline whitespace-nowrap;
+  }
+
+  .header__right {
+    @apply flex items-center gap-4;
+  }
+
+  .header__nav {
+    @apply hidden md:flex items-center gap-0;
+  }
+
+  .header__nav-item {
+    @apply text-base text-bw-primary no-underline whitespace-nowrap;
+    @apply px-4 py-2 transition-all duration-200 ease-in-out;
+    @apply hover:bg-bw-primary hover:text-bw-background;
+  }
+
+  .header__nav-item--active {
+    @apply font-semibold;
+  }
+
+  .header__controls {
+    @apply flex items-center gap-0;
+  }
+
+  .header__control-btn {
+    @apply w-10 h-10 p-3 flex items-center justify-center bg-transparent border-none;
+    @apply text-bw-primary cursor-pointer transition-all duration-200 ease-in-out;
+    @apply hover:bg-bw-primary hover:text-bw-background;
+  }
+
+  .header__icon {
+    @apply w-4 h-4;
+  }
+
+  .header__lang-text {
+    @apply text-xs font-semibold;
+  }
+
+  .header__hamburger {
+    @apply w-10 h-10 p-3;
+    @apply flex flex-col justify-center gap-1 bg-transparent border-none;
+    @apply md:hidden cursor-pointer;
+  }
+
+  .header__hamburger span {
+    @apply block w-full h-0.5 bg-bw-primary;
+    @apply transition-all duration-200 ease-in-out origin-center;
+  }
+
+  /* Hamburger animation */
+  .header__hamburger--open span:nth-child(1) {
+    @apply translate-y-1.5 rotate-45;
+  }
+
+  .header__hamburger--open span:nth-child(2) {
+    @apply opacity-0;
+  }
+
+  .header__hamburger--open span:nth-child(3) {
+    @apply -translate-y-1.5 -rotate-45;
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    @apply w-full max-h-0 top-(--header-mobile-height) md:top-(--header-height);
+    @apply left-0 right-0 border-b border-bw-surface opacity-0 invisible;
+  }
+
+  .mobile-menu--open {
+    @apply max-h-screen opacity-100 visible;
+  }
+
+  .mobile-menu__content {
+    @apply flex flex-col px-10 py-4 gap-4 *:last:border-b-0;
+  }
+
+  .mobile-menu__item {
+    @apply text-base text-bw-primary no-underline;
+    @apply px-4 py-2 mx-0 -my-2 border-b border-bw-surface;
+    @apply transition-all duration-200 ease-in-out hover:bg-bw-primary hover:text-bw-background;
+  }
+</style>

@@ -1,0 +1,89 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import TimelineItem from "../ui/TimelineItem.astro";
+import Icon from "../ui/Icon.astro";
+
+interface AwardBadge {
+  icon: string;
+  text: string;
+}
+
+interface AwardItem {
+  year: string;
+  title: string;
+  description?: string;
+  badge?: AwardBadge;
+}
+
+interface Props {
+  title: string;
+  items: AwardItem[];
+  class?: string;
+}
+
+const { title, items, class: className = "" } = Astro.props;
+---
+
+{items && items.length > 0 && (
+  <section class:list={["awards-list", className]}>
+    <SectionHeader title={title} />
+
+    <div class="awards-list__items">
+      {
+        items.map((item) => (
+          <TimelineItem date={item.year}>
+            <div class="awards-list__item">
+              <p class="awards-list__title">{item.title}</p>
+              {item.description && (
+                <p class="awards-list__description">{item.description}</p>
+              )}
+              {item.badge && item.badge.icon && item.badge.text && (
+                <div class="awards-list__badge">
+                  <Icon
+                    name={item.badge.icon}
+                    size={18}
+                    class="flex items-center justify-center text-badge-primary"
+                  />
+                  <span class="awards-list__badge-text">{item.badge.text}</span>
+                </div>
+              )}
+            </div>
+          </TimelineItem>
+        ))
+      }
+    </div>
+  </section>
+)}
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .awards-list {
+    @apply p-4 w-full flex flex-col gap-4;
+  }
+
+  .awards-list__items {
+    @apply flex flex-col gap-3;
+  }
+
+  .awards-list__item {
+    @apply flex flex-col gap-1 w-full;
+  }
+
+  .awards-list__title {
+    @apply text-base font-semibold text-bw-primary;
+  }
+
+  .awards-list__description {
+    @apply text-base font-normal text-bw-primary;
+  }
+
+  .awards-list__badge {
+    @apply flex items-center gap-2;
+  }
+
+  .awards-list__badge-text {
+    @apply text-base font-normal text-bw-secondary;
+  }
+</style>

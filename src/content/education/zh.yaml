@@ -1,0 +1,30 @@
+- id: bachelor-seu
+  dateRange: 2014-2018
+  institution: 东南大学
+  degree: 学士
+  location: 中国·南京
+  description: 共享单车骑行模式的空间分析及其与城市建成环境的关系
+  order: 1
+
+- id: master-seu
+  dateRange: 2018-2021
+  institution: 东南大学
+  degree: 硕士
+  location: 中国·南京
+  description: 动态城市道路容量估计的数据驱动框架
+  order: 2
+
+- id: visit-dtu
+  dateRange: "2025"
+  institution: 丹麦技术大学
+  degree: 访问
+  location: 哥本哈根·丹麦
+  order: 3
+
+- id: phd-tum
+  dateRange: 2021-至今
+  institution: 慕尼黑工业大学
+  degree: 博士
+  location: 德国·慕尼黑
+  description: 应对交通系统中的数据稀疏性和数据稀缺性
+  order: 4

@@ -1,0 +1,111 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import TimelineItem from "../ui/TimelineItem.astro";
+import LinkButton from "../ui/LinkButton.astro";
+import { marked } from "marked";
+import { getLangFromUrl, useTranslations } from "../../i18n";
+
+interface PublicationLinks {
+  paper?: string;
+  code?: string;
+  doi?: string;
+  arxiv?: string;
+}
+
+interface PublicationItem {
+  date: string;
+  citation: string;
+  links?: PublicationLinks | null;
+}
+
+interface Props {
+  title: string;
+  moreText?: string;
+  moreLink?: string;
+  items: PublicationItem[];
+  class?: string;
+}
+
+const { title, moreText, moreLink, items, class: className = "" } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+{
+  items && items.length > 0 && (
+    <section class:list={["publications-list", className]}>
+      <SectionHeader title={title} moreText={moreText} moreLink={moreLink} />
+
+      <div class="publications-list__items">
+        {items.map((item) => (
+          <TimelineItem date={item.date}>
+            <div class="publications-list__item">
+              <p
+                class="publications-list__citation"
+                set:html={marked.parseInline(item.citation)}
+              />
+              {item.links && Object.keys(item.links).length > 0 && (
+                <div class="publications-list__links">
+                  {item.links.paper && (
+                    <LinkButton
+                      href={item.links.paper}
+                      text={t("links.paper")}
+                      size="m"
+                    />
+                  )}
+                  {item.links.code && (
+                    <LinkButton
+                      href={item.links.code}
+                      text={t("links.code")}
+                      size="m"
+                    />
+                  )}
+                  {item.links.doi && (
+                    <LinkButton
+                      href={item.links.doi}
+                      text={t("links.doi")}
+                      size="m"
+                    />
+                  )}
+                  {item.links.arxiv && (
+                    <LinkButton
+                      href={item.links.arxiv}
+                      text={t("links.arxiv")}
+                      size="m"
+                    />
+                  )}
+                </div>
+              )}
+            </div>
+          </TimelineItem>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .publications-list {
+    @apply p-4 w-full flex flex-col gap-4;
+  }
+
+  .publications-list__items {
+    @apply flex flex-col gap-3;
+  }
+
+  .publications-list__item {
+    @apply flex flex-col gap-2 w-full;
+  }
+
+  .publications-list__citation {
+    @apply text-base font-normal text-bw-primary;
+  }
+
+  .publications-list__links {
+    @apply flex gap-1 flex-wrap items-center;
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<footer class="footer" transition:persist="footer">
+  <div class="footer__content">
+    <p>
+      <span class="footer__text">@2025</span>
+      <span class="footer__name">{name}</span>
+    </p>
+  </div>
+</footer>
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .footer {
+    @apply relative mt-auto mb-4;
+    @apply h-(--footer-height) flex items-center justify-center;
+    @apply bg-bw-background/50 border-t border-bw-surface;
+    @apply bg-(image:--pattern-bg) bg-size-(--pattern-size);
+  }
+
+  .footer__content {
+    @apply flex items-center;
+  }
+
+  .footer__content p {
+    @apply text-xs text-bw-primary text-center;
+  }
+
+  .footer__text {
+    @apply font-normal;
+  }
+
+  .footer__name {
+    @apply font-bold;
+  }
+</style>

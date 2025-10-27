@@ -1,0 +1,44 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import MainLayout from "../../components/layout/MainLayout.astro";
+import PublicationsList from "../../components/sections/PublicationsList.astro";
+import { useTranslations, type Language } from "../../i18n";
+
+export async function getStaticPaths() {
+  return [{ params: { lang: "en" } }, { params: { lang: "zh" } }];
+}
+
+const { lang } = Astro.params as { lang: Language };
+const t = useTranslations(lang);
+
+// Get profile data
+const profile = await getEntry("profile", lang);
+
+// Get all publications for this language
+const publications = (
+  await getCollection(`publications-${lang}` as "publications-en" | "publications-zh")
+).sort((a, b) => b.data.order - a.data.order);
+
+const publicationItems = publications.map((p) => ({
+  date: String(p.data.date),
+  citation: p.data.citation,
+  links: p.data.links
+}));
+---
+
+<BaseLayout
+  title={`${profile?.data.name} - ${t("sections.publications")}`}
+  description={`${t("sections.publications")} - ${profile?.data.name}`}
+  lang={lang}
+>
+  <MainLayout
+    name={profile?.data.name || "Cheng LYU"}
+    lang={lang}
+    currentPath={`/${lang}/publications`}
+    photo={profile?.data.photo || "/images/photo.jpg"}
+    contacts={profile?.data.contacts || []}
+  >
+    <PublicationsList title={t("sections.publications")} items={publicationItems} />
+  </MainLayout>
+</BaseLayout>

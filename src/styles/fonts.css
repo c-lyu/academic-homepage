@@ -1,0 +1,46 @@
+/* IBM Plex Sans - Local Fonts (Optimized - only used weights) */
+
+/* Regular - 400 (body text) */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-Regular.woff2") format("woff2");
+}
+
+/* Medium - 500 (headers) */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-Medium.woff2") format("woff2");
+}
+
+/* SemiBold - 600 (headers, emphasis) */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+}
+
+/* SemiBold Italic - 600 (LinkButton component) */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-SemiBoldItalic.woff2") format("woff2");
+}
+
+/* Bold - 700 (headers) */
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/IBMPlexSans-Bold.woff2") format("woff2");
+}

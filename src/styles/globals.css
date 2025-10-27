@@ -1,0 +1,99 @@
+@import "./fonts-optimized.css";
+@import "tailwindcss";
+
+/* Reset and base styles */
+* {
+  @apply m-0 p-0 box-border;
+}
+
+@theme {
+  /* Colors */
+  --color-bw-primary: oklch(0.26 0 0);
+  --color-bw-secondary: oklch(0.66 0 0);
+  --color-bw-background: oklch(0.99 0.0026 106);
+  --color-bw-surface: oklch(0.26 0 0 / 10%);
+  --color-bw-surface-hover: oklch(0.26 0 0 / 15%);
+
+  --color-accent-primary: oklch(0.75 0.33 253);
+  --color-accent-surface: oklch(0.75 0.33 253 / 10%);
+
+  --color-badge-primary: oklch(0.76 0.16 73);
+
+  /* Typography */
+  --font-display: "IBM Plex Sans", Roboto, "Helvetica Neue", Arial, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system,
+    BlinkMacSystemFont, sans-serif;
+
+  /* Layout */
+  --sidebar-width: 126px;
+  --content-max-width: 700px;
+  --header-height: 100px;
+  --header-mobile-height: 70px;
+  --footer-height: 60px;
+
+  /* Background Pattern */
+  --pattern-color: oklch(0.95 0.005 40);
+  --pattern-radius: 0.75px;
+  --pattern-bg: radial-gradient(
+    var(--pattern-color) var(--pattern-radius),
+    var(--color-bw-background) var(--pattern-radius)
+  );
+  --pattern-size: calc(var(--pattern-radius) / 0.25)
+    calc(var(--pattern-radius) * 4);
+}
+
+@layer base {
+  [data-theme="dark"] {
+    --color-bw-primary: oklch(0.9 0.005 40);
+    --color-bw-secondary: oklch(0.86 0.01 40);
+    --color-bw-background: oklch(0.26 0 0);
+    --color-bw-surface: oklch(0.8 0 0 / 10%);
+    --color-bw-surface-hover: oklch(0.8 0 0 / 15%);
+
+    --pattern-color: oklch(0.4 0 0);
+  }
+}
+
+/* Base styles */
+html {
+  @apply font-display text-base text-bw-primary bg-bw-background hyphens-auto;
+  @apply duration-200 transition-colors scroll-smooth;
+}
+
+body {
+  @apply min-h-screen overflow-x-hidden;
+}
+
+body::before {
+  @apply content-[''] fixed top-0 left-0 right-0 bottom-0;
+  @apply border-16 border-accent-primary pointer-events-none z-9999;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-semibold leading-4 text-accent-primary;
+}
+
+a {
+  @apply text-bw-primary no-underline duration-150 hover:text-bw-secondary;
+}
+
+/* Layout utilities */
+.container {
+  @apply w-full max-w-3xl mx-auto px-6;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  @apply outline-2 outline-bw-primary outline-offset-2;
+}
+
+/* Selection styles */
+::selection {
+  @apply bg-accent-primary text-bw-background;
+}

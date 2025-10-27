@@ -1,0 +1,78 @@
+---
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+import Sidebar from "./Sidebar.astro";
+import { type Language } from "../../i18n";
+
+interface Contact {
+  type: string;
+  icon: string;
+  text: string;
+  link?: string;
+}
+
+interface Props {
+  name: string;
+  lang: Language;
+  currentPath?: string;
+  photo: string;
+  contacts: Contact[];
+}
+
+const {
+  name,
+  lang,
+  currentPath = "/",
+  photo,
+  contacts,
+} = Astro.props;
+---
+
+<div class="layout">
+  <Header name={name} lang={lang} currentPath={currentPath} />
+
+  <div class="layout__container">
+    <!-- <Sidebar photo={photo} contacts={contacts} class="layout__sidebar" /> -->
+    <div class="layout__sidebar">
+      <Sidebar photo={photo} contacts={contacts} />
+    </div>
+
+    <main class="layout__main">
+      <slot />
+    </main>
+
+    <div class="layout__spacer"></div>
+  </div>
+
+  <Footer name={name}/>
+</div>
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .layout {
+    @apply min-h-screen flex flex-col bg-bw-background;
+  }
+
+  .layout__container {
+    @apply w-full px-6 pt-24 pb-10 flex flex-col gap-8;
+    @apply md:px-24 md:pt-36 md:pb-24 md:grid md:gap-4;
+    @apply md:grid-cols-[200px_1fr];
+    @apply xl:grid-cols-[minmax(auto,200px)_1fr_minmax(auto,200px)];
+  }
+
+  .layout__sidebar {
+    @apply w-full h-fit shrink-0;
+    @apply md:sticky md:top-36 md:self-start md:w-auto;
+  }
+
+  .layout__main {
+    @apply w-full max-w-(--content-max-width) flex flex-col gap-5;
+    @apply xl:justify-self-center xl:mx-auto;
+  }
+
+  .layout__spacer {
+    @apply hidden xl:block;
+  }
+</style>

@@ -1,0 +1,90 @@
+---
+import "../styles/globals.css";
+import { type Language } from "../i18n";
+import { ClientRouter } from "astro:transitions";
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang: Language;
+}
+
+const {
+  title = "Cheng LYU",
+  description = "Personal Academic Homepage",
+  lang,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ClientRouter />
+
+    <!-- Iconify Icon Web Component -->
+    <script
+      is:inline
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/iconify-icon@2.2.0/dist/iconify-icon.min.js"
+    ></script>
+
+    <!-- Theme script - runs before page load to prevent flash -->
+    <script is:inline>
+      // Get stored theme or default to light
+      const getTheme = () => {
+        if (typeof localStorage !== "undefined") {
+          const stored = localStorage.getItem("theme");
+          if (stored) return stored;
+        }
+        // Check system preference
+        if (
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        ) {
+          return "dark";
+        }
+        return "light";
+      };
+
+      // Apply theme immediately
+      const theme = getTheme();
+      document.documentElement.setAttribute("data-theme", theme);
+    </script>
+  </head>
+  <body>
+    <slot />
+
+    <!-- Theme toggle functionality -->
+    <script>
+      function initTheme() {
+        const themeToggle = document.getElementById("theme-toggle");
+
+        if (!themeToggle) return;
+
+        const updateTheme = (theme: string) => {
+          document.documentElement.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+        };
+
+        themeToggle.addEventListener("click", () => {
+          const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "light" : "dark";
+          updateTheme(newTheme);
+        });
+      }
+
+      // Run on page load
+      initTheme();
+
+      // Re-run after page transitions (for View Transitions API)
+      document.addEventListener("astro:after-swap", initTheme);
+    </script>
+  </body>
+</html>

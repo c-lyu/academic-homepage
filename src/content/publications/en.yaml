@@ -1,0 +1,354 @@
+# 2019 Publications
+- id: 2019-spatial-ensemble-traffic
+  date: 2019
+  year: 2019
+  authors: Liu, Y., Liu, Z., Vu, H. L., & Lyu, C.
+  title: A Spatio-Temporal Ensemble Method for Large-Scale Traffic State Prediction
+  venue: Computer-Aided Civil and Infrastructure Engineering
+  citation: "Liu, Y., Liu, Z., Vu, H. L., & **Lyu, C.** (2019). A Spatio-Temporal Ensemble Method for Large-Scale Traffic State Prediction. *Computer-Aided Civil and Infrastructure Engineering*, 35(1), 26–44."
+  order: 1
+
+- id: 2019-car-hailing-ensemble
+  date: 2019
+  year: 2019
+  authors: Liu, Y., Lyu, C., Khadka, A., Zhang, W., & Liu, Z.
+  title: Spatio-Temporal Ensemble Method for Car-Hailing Demand Prediction
+  venue: IEEE Transactions on Intelligent Transportation Systems
+  citation: "Liu, Y., **Lyu, C.**, Khadka, A., Zhang, W., & Liu, Z. (2019). Spatio-Temporal Ensemble Method for Car-Hailing Demand Prediction. *IEEE Transactions on Intelligent Transportation Systems*, 21(12), 5328–5333."
+  order: 2
+
+- id: 2019-attention-taxi-hailing
+  date: 2019
+  year: 2019
+  authors: Liu, Y., Liu, Z., Lyu, C., & Ye, J.
+  title: Attention-Based Deep Ensemble Net for Large-Scale Online Taxi-Hailing Demand Prediction
+  venue: IEEE Transactions on Intelligent Transportation Systems
+  citation: "Liu, Y., Liu, Z., **Lyu, C.**, & Ye, J. (2019). Attention-Based Deep Ensemble Net for Large-Scale Online Taxi-Hailing Demand Prediction. *IEEE Transactions on Intelligent Transportation Systems*, 21(11), 4798–4807."
+  order: 3
+
+- id: 2019-video-recommendation
+  date: 2019
+  year: 2019
+  authors: Liu, Y., Lyu, C., Liu, Z., & Tao, D.
+  title: Building Effective Short Video Recommendation
+  venue: IEEE International Conference on Multimedia & Expo Workshops
+  citation: "Liu, Y., **Lyu, C.**, Liu, Z., & Tao, D. (2019). Building Effective Short Video Recommendation. In *IEEE International Conference on Multimedia & Expo Workshops* (pp. 651–656). IEEE, Shanghai, China."
+  order: 4
+
+- id: 2019-personalization-its
+  date: 2019
+  year: 2019
+  authors: Liu, Y., Lyu, C., Cheng, Q., & Liu, Z.
+  title: Exploring Personalization in the Application of Intelligent Transportation Systems
+  venue: ACM SIGSPATIAL RAAS
+  citation: "Liu, Y., **Lyu, C.**, Cheng, Q., & Liu, Z. (2019). Exploring Personalization in the Application of Intelligent Transportation Systems. In *1st ACM SIGSPATIAL International Workshop on Ride-hailing Algorithms, Applications, and Systems (RAAS'19)*. ACM, Chicago, IL, USA."
+  order: 5
+
+- id: 2019-bike-built-environment
+  date: 2019
+  year: 2019
+  authors: Lyu, C., Wang, Y., Xia, Y., Liu, Z., & Wang, W.
+  title: Spatial Analysis of the Relationship between Urban Built Environment and Public Bicycle Ridership
+  venue: CICTP
+  citation: "**Lyu, C.**, Wang, Y., Xia, Y., Liu, Z., & Wang, W. (2019). Spatial Analysis of the Relationship between Urban Built Environment and Public Bicycle Ridership. In *CICTP 2019* (pp. 5948–5960). ASCE, Nanjing, China."
+  featured: false
+  order: 6
+
+# 2020 Publications
+- id: 2020-personalized-taxi-hailing
+  date: 2020
+  year: 2020
+  authors: Liu, Z., Liu, Y., Lyu, C., & Ye, J.
+  title: Building Personalized Transportation Model for Online Taxi-Hailing Demand Prediction
+  venue: IEEE Transactions on Cybernetics
+  citation: "Liu, Z., Liu, Y., **Lyu, C.**, & Ye, J. (2020). Building Personalized Transportation Model for Online Taxi-Hailing Demand Prediction. *IEEE Transactions on Cybernetics*, 51(9), 4602–4610."
+  order: 7
+
+- id: 2020-bus-passenger-flow-cnn
+  date: 2020
+  year: 2020
+  authors: Liu, Y., Liu, X., Lyu, C., & Liu, Z.
+  title: Automatic Feature Engineering for Bus Passenger Flow Prediction Based on Modular Convolutional Neural Network
+  venue: IEEE Transactions on Intelligent Transportation Systems
+  citation: "Liu, Y., Liu, X., **Lyu, C.**, & Liu, Z. (2020). Automatic Feature Engineering for Bus Passenger Flow Prediction Based on Modular Convolutional Neural Network. *IEEE Transactions on Intelligent Transportation Systems*, 22(4), 2349–2358."
+  order: 8
+
+- id: 2020-bike-repositioning
+  date: 2020
+  year: 2020
+  authors: Huang, D., Chen, X., Liu, Z., Lyu, C., Wang, S., & Chen, X.
+  title: A Static Bike Repositioning Model in a Hub-and-Spoke Network Framework
+  venue: Transportation Research Part E
+  citation: "Huang, D., Chen, X., Liu, Z., **Lyu, C.**, Wang, S., & Chen, X. (2020). A Static Bike Repositioning Model in a Hub-and-Spoke Network Framework. *Transportation Research Part E: Logistics and Transportation Review*, 141, 102031."
+  order: 9
+
+- id: 2020-bike-built-environment-nanjing
+  date: 2020
+  year: 2020
+  authors: Lyu, C., Wu, X., Liu, Y., Liu, Z., & Yang, X.
+  title: Exploring Multi-Scale Spatial Relationship between Built Environment and Public Bicycle Ridership
+  venue: Journal of Transport and Land Use
+  citation: "**Lyu, C.**, Wu, X., Liu, Y., Liu, Z., & Yang, X. (2020). Exploring Multi-Scale Spatial Relationship between Built Environment and Public Bicycle Ridership: A Case Study in Nanjing. *Journal of Transport and Land Use*, 13, 447–467."
+  links:
+    paper: https://www.jtlu.org/index.php/jtlu/article/view/1568
+  featured: true
+  order: 10
+
+# 2021 Publications
+- id: 2021-ev-energy-consumption
+  date: 2021
+  year: 2021
+  authors: Liu, Y., Zhang, Q., Lyu, C., & Liu, Z.
+  title: Modelling the Energy Consumption of Electric Vehicles under Uncertain and Small Data Conditions
+  venue: Transportation Research Part A
+  citation: "Liu, Y., Zhang, Q., **Lyu, C.**, & Liu, Z. (2021). Modelling the Energy Consumption of Electric Vehicles under Uncertain and Small Data Conditions. *Transportation Research Part A: Policy and Practice*, 154, 313–328."
+  order: 11
+
+- id: 2021-multimodal-transportation
+  date: 2021
+  year: 2021
+  authors: Liu, Y., Lyu, C., Liu, Z., & Cao, J.
+  title: Exploring a Large-Scale Multi-Modal Transportation Recommendation System
+  venue: Transportation Research Part C
+  citation: "Liu, Y., **Lyu, C.**, Liu, Z., & Cao, J. (2021). Exploring a Large-Scale Multi-Modal Transportation Recommendation System. *Transportation Research Part C: Emerging Technologies*, 126, 103070."
+  order: 12
+
+- id: 2021-deeptsp
+  date: 2021
+  year: 2021
+  authors: Liu, Y., Lyu, C., Zhang, Y., Liu, Z., Yu, W., & Qu, X.
+  title: DeepTSP - Deep Traffic State Prediction Model Based on Large-Scale Empirical Data
+  venue: Communications in Transportation Research
+  citation: "Liu, Y., **Lyu, C.**, Zhang, Y., Liu, Z., Yu, W., & Qu, X. (2021). DeepTSP: Deep Traffic State Prediction Model Based on Large-Scale Empirical Data. *Communications in Transportation Research*, 1, 100012."
+  order: 13
+
+- id: 2021-bus-route-identification
+  date: 2021
+  year: 2021
+  authors: Lyu, C., Wu, X., Liu, Y., & Liu, Z.
+  title: A Partial-Fréchet-distance-based Framework for Bus Route Identification
+  venue: IEEE Transactions on Intelligent Transportation Systems
+  citation: "**Lyu, C.**, Wu, X., Liu, Y., & Liu, Z. (2021). A Partial-Fréchet-distance-based Framework for Bus Route Identification. *IEEE Transactions on Intelligent Transportation Systems*, 23(7), 9275–9280."
+  links:
+    paper: https://ieeexplore.ieee.org/document/9430756
+  featured: true
+  order: 14
+
+# 2022 Publications
+- id: 2022-gp-hat-kernel
+  date: 2022
+  year: 2022
+  authors: Liu, Z., Lyu, C., Huo, J., Wang, S., & Chen, J.
+  title: Gaussian Process Regression for Transportation System Estimation and Prediction Problems - The Deformation and a Hat Kernel
+  venue: IEEE Transactions on Intelligent Transportation Systems
+  citation: "Liu, Z., **Lyu, C.**, Huo, J., Wang, S., & Chen, J. (2022). Gaussian Process Regression for Transportation System Estimation and Prediction Problems: The Deformation and a Hat Kernel. *IEEE Transactions on Intelligent Transportation Systems*, 23(11), 22331–22342."
+  order: 15
+
+- id: 2022-deep-dispatching
+  date: 2022
+  year: 2022
+  authors: Liu, Y., Wu, F., Lyu, C., Li, S., Ye, J., & Liu, Z.
+  title: Deep Dispatching - A Deep Reinforcement Learning Approach for Vehicle Dispatching on Online Ride-Hailing Platform
+  venue: Transportation Research Part E
+  citation: "Liu, Y., Wu, F., **Lyu, C.**, Li, S., Ye, J., & Liu, Z. (2022). Deep Dispatching: A Deep Reinforcement Learning Approach for Vehicle Dispatching on Online Ride-Hailing Platform. *Transportation Research Part E: Logistics and Transportation Review*, 161, 102694."
+  order: 16
+
+- id: 2022-behavior2vector
+  date: 2022
+  year: 2022
+  authors: Liu, Y., Wu, F., Lyu, C., Liu, X., & Liu, Z.
+  title: Behavior2vector - Embedding Users' Personalized Travel Behavior to Vector
+  venue: IEEE Transactions on Intelligent Transportation Systems
+  citation: "Liu, Y., Wu, F., **Lyu, C.**, Liu, X., & Liu, Z. (2022). Behavior2vector: Embedding Users' Personalized Travel Behavior to Vector. *IEEE Transactions on Intelligent Transportation Systems*, 23(7), 8346–8355."
+  order: 17
+
+- id: 2022-personalized-modeling
+  date: 2022
+  year: 2022
+  authors: Lyu, C., Liu, Y., Wang, L., & Qu, X.
+  title: Personalized Modeling of Travel Behaviors and Traffic Dynamics
+  venue: Journal of Transportation Engineering Part A
+  citation: "**Lyu, C.**, Liu, Y., Wang, L., & Qu, X. (2022). Personalized Modeling of Travel Behaviors and Traffic Dynamics. *Journal of Transportation Engineering, Part A: Systems*, 148, 04022081."
+  links:
+    paper: https://ascelibrary.org/doi/10.1061/JTEPBS.0000740
+  featured: true
+  order: 18
+
+# 2023 Publications
+- id: 2023-bus-passenger-profile
+  date: 2023
+  year: 2023
+  authors: Chen, S., Liu, X., Lyu, C., Tang, T., & Liu, Z.
+  title: A Holistic Data-driven Framework for Developing a Complete Profile of Bus Passengers
+  venue: Transportation Research Part A
+  citation: "Chen, S., Liu, X., **Lyu, C.**, Tang, T., & Liu, Z. (2023). A Holistic Data-driven Framework for Developing a Complete Profile of Bus Passengers. *Transportation Research Part A: Policy and Practice*, 173, 103692."
+  links:
+    paper: https://www.sciencedirect.com/science/article/pii/S096585642300112X
+  order: 19
+
+- id: 2023-shared-mobility-ml
+  date: 2023
+  year: 2023
+  authors: Abouelela, M., Lyu, C., & Antoniou, C.
+  title: Exploring the Potentials of Open-Source Big Data and Machine Learning in Shared Mobility Fleet Utilization Prediction
+  venue: Data Science for Transportation
+  citation: "Abouelela, M., **Lyu, C.**, & Antoniou, C. (2023). Exploring the Potentials of Open-Source Big Data and Machine Learning in Shared Mobility Fleet Utilization Prediction. *Data Science for Transportation*, 5(5), 1–26."
+  links:
+    paper: https://link.springer.com/article/10.1007/s42421-023-00068-9
+  order: 20
+
+- id: 2023-gp-traffic-flow
+  date: 2023
+  year: 2023
+  authors: Liu, Z., Lyu, C., Wang, Z., Wang, S., Liu, P., & Meng, Q.
+  title: A Gaussian-Process-Based Data-Driven Traffic Flow Model and Its Application in Road Capacity Analysis
+  venue: IEEE Transactions on Intelligent Transportation Systems
+  citation: "Liu, Z., **Lyu, C.**, Wang, Z., Wang, S., Liu, P., & Meng, Q. (2023). A Gaussian-Process-Based Data-Driven Traffic Flow Model and Its Application in Road Capacity Analysis. *IEEE Transactions on Intelligent Transportation Systems*, 24(2), 1544–1563."
+  links:
+    paper: https://ieeexplore.ieee.org/document/10025463
+  order: 21
+
+- id: 2023-tucker-itsc
+  date: 2023
+  year: 2023
+  authors: Lyu, C., Lu, Q. L., Wu, X., & Antoniou, C.
+  title: Robust Two-Stage Transport Data Imputation with Changepoint Detection and Tucker Decomposition
+  venue: IEEE ITSC
+  citation: "**Lyu, C.**, Lu, Q. L., Wu, X., & Antoniou, C. (2023). Robust Two-Stage Transport Data Imputation with Changepoint Detection and Tucker Decomposition. In *IEEE 26th International Conference on Intelligent Transportation Systems (ITSC)* (pp. 494–499). IEEE, Bilbao, Spain."
+  links:
+    paper: https://ieeexplore.ieee.org/document/10422346
+  featured: false
+  order: 22
+
+# 2024 Publications
+- id: 2024-urban-air-mobility
+  date: 2024
+  year: 2024
+  authors: Liu, Y., Lyu, C., Bai, F., Parishwad, O., & Li, Y.
+  title: The role of Intelligent Technology in the Development of Urban Air Mobility Systems - A Technical Perspective
+  venue: Fundamental Research
+  citation: "Liu, Y., **Lyu, C.**, Bai, F., Parishwad, O., & Li, Y. (2024). The role of Intelligent Technology in the Development of Urban Air Mobility Systems: A Technical Perspective. *Fundamental Research*, 4(5), 1017–1024."
+  order: 23
+
+- id: 2024-transfer-learning
+  date: 2024
+  year: 2024
+  authors: Yang, N., Lu, Q. L., Lyu, C., & Antoniou, C.
+  title: Transfer Learning for Transportation Demand Resilience Patterns Prediction Using Floating Car Data
+  venue: Transportation Research Record
+  citation: "Yang, N., Lu, Q. L., **Lyu, C.**, & Antoniou, C. (2024). Transfer Learning for Transportation Demand Resilience Patterns Prediction Using Floating Car Data. *Transportation Research Record: Journal of the Transportation Research Board*, 2678(11), 1622–1638."
+  links:
+    paper: https://doi.org/10.1177/03611981241245681
+  featured: false
+  order: 24
+
+- id: 2024-fare-free-crowding
+  date: 2024
+  year: 2024
+  authors: Lu, Q. L., Mahajan, V., Lyu, C., & Antoniou, C.
+  title: Analyzing the Impact of Fare-Free Public Transport Policies on Crowding Patterns at Stations Using Crowdsensing Data
+  venue: Transportation Research Part A
+  citation: "Lu, Q. L., Mahajan, V., **Lyu, C.**, & Antoniou, C. (2024). Analyzing the Impact of Fare-Free Public Transport Policies on Crowding Patterns at Stations Using Crowdsensing Data. *Transportation Research Part A: Policy and Practice*, 179, 103944."
+  links:
+    paper: https://www.sciencedirect.com/science/article/pii/S0965856423003646
+  order: 25
+
+- id: 2024-tucker-trc
+  date: 2024
+  year: 2024
+  authors: Lyu, C., Lu, Q. L., Wu, X., & Antoniou, C.
+  title: Tucker Factorization-Based Tensor Completion for Robust Traffic Data Imputation
+  venue: Transportation Research Part C
+  citation: "**Lyu, C.**, Lu, Q. L., Wu, X., & Antoniou, C. (2024). Tucker Factorization-Based Tensor Completion for Robust Traffic Data Imputation. *Transportation Research Part C: Emerging Technologies*, 160, 104502."
+  links:
+    paper: https://www.sciencedirect.com/science/article/pii/S0968090X24000238
+    code: https://github.com/c-lyu/tucker-traffic-imputation
+  featured: true
+  order: 26
+
+- id: 2024-gan-review
+  date: 2024
+  year: 2024
+  authors: Li, Y., Bai, F., Lyu, C., Qu, X., & Liu, Y.
+  title: A Systematic Review of Generative Adversarial Networks for Traffic State Prediction - Overview, Taxonomy, and Future Prospects
+  venue: Information Fusion
+  citation: "Li, Y., Bai, F., **Lyu, C.**, Qu, X., & Liu, Y. (2024). A Systematic Review of Generative Adversarial Networks for Traffic State Prediction: Overview, Taxonomy, and Future Prospects. *Information Fusion*, 117, 102915."
+  order: 27
+
+- id: 2024-tucker-trb
+  date: 2024
+  year: 2024
+  authors: Lyu, C., Lu, Q. L., Wu, X., & Antoniou, C.
+  title: Robust Low-Rank Tensor Decomposition Framework for Transport Data Imputation
+  venue: TRB Annual Meeting
+  citation: "**Lyu, C.**, Lu, Q. L., Wu, X., & Antoniou, C. (2024). Robust Low-Rank Tensor Decomposition Framework for Transport Data Imputation. In *TRB 2024*. Transportation Research Board, Washington DC, USA."
+  featured: false
+  order: 28
+
+# 2025 Publications
+- id: 2025-marl-traffic-scalable
+  date: 2025
+  year: 2025
+  authors: Wang, L., Duan, P., Lyu, C., Wang, Z., He, Z., Zheng, N., & Ma, Z.
+  title: Scalable and Reliable Multi-agent Reinforcement Learning for Traffic Assignment
+  venue: arXiv preprint
+  citation: "Wang, L., Duan, P., **Lyu, C.**, Wang, Z., He, Z., Zheng, N., & Ma, Z. (2025). Scalable and Reliable Multi-agent Reinforcement Learning for Traffic Assignment. *arXiv preprint arXiv:2506.17029*."
+  links:
+    arxiv: https://arxiv.org/abs/2506.17029
+  order: 29
+
+- id: 2025-rl-route-recommendation
+  date: 2025
+  year: 2025
+  authors: Wang, L., Duan, P., Lyu, C., & Ma, Z.
+  title: Reinforcement Learning-based Sequential Route Recommendation for System-Optimal Traffic Assignment
+  venue: arXiv preprint
+  citation: "Wang, L., Duan, P., **Lyu, C.**, & Ma, Z. (2025). Reinforcement Learning-based Sequential Route Recommendation for System-Optimal Traffic Assignment. *arXiv preprint arXiv:2505.20889*."
+  links:
+    arxiv: https://arxiv.org/abs/2505.20889
+  order: 31
+
+- id: 2025-llm-route-choices
+  date: 2025
+  year: 2025
+  authors: Wang, L., Duan, P., He, Z., Lyu, C., Chen, X., Zheng, N., Yao, L., & Ma, Z.
+  title: Agentic Large Language Models for Day-to-Day Route Choices
+  venue: Transportation Research Part C
+  citation: "Wang, L., Duan, P., He, Z., **Lyu, C.**, Chen, X., Zheng, N., Yao, L., & Ma, Z. (2025). Agentic Large Language Models for Day-to-Day Route Choices. *Transportation Research Part C: Emerging Technologies*, 180, 105307."
+  links:
+    paper: https://www.sciencedirect.com/science/article/pii/S0968090X25003110
+  order: 32
+
+- id: 2025-lane-reversal
+  date: 2025
+  year: 2025
+  authors: Lu, Q. L., Sun, W., Lyu, C., Schmöcker, J. D., & Antoniou, C.
+  title: Post-Disruption Lane Reversal Optimization with Surrogate Modeling to Improve Urban Traffic Resilience
+  venue: Transportation Research Part B
+  citation: "Lu, Q. L., Sun, W., **Lyu, C.**, Schmöcker, J. D., & Antoniou, C. (2025). Post-Disruption Lane Reversal Optimization with Surrogate Modeling to Improve Urban Traffic Resilience. *Transportation Research Part B: Methodological*, 197, 103237."
+  links:
+    paper: https://www.sciencedirect.com/science/article/pii/S0191261525000864
+  order: 33
+
+- id: 2025-demi-iotj
+  date: 2025
+  year: 2025
+  authors: Lyu, C., & Antoniou, C.
+  title: A Diffusion-Based Expectation-Maximization Framework for Probabilistic Traffic Data Imputation
+  venue: IEEE Internet of Things Journal
+  citation: "**Lyu, C.**, & Antoniou, C. (2025). A Diffusion-Based Expectation-Maximization Framework for Probabilistic Traffic Data Imputation. *IEEE Internet of Things Journal*, 12(20), 43227–43240."
+  links:
+    paper: https://doi.org/10.1109/JIOT.2025.3594996
+    code: https://github.com/c-lyu/demi
+  featured: true
+  order: 34
+
+# - id: 2025-flowsyn-trc
+#   date: 2025
+#   year: 2025
+#   authors: Lyu, C., Wu, H., Li, D., Pereira, F. C., Azevedo, C. M. A., & Antoniou, C.
+#   title: Improving Fidelity and Diversity of Population Synthesis via Latent Generative Flow
+#   venue: Under Review
+#   citation: "**Lyu, C.**, Wu, H., Li, D., Pereira, F. C., Azevedo, C. M. A., & Antoniou, C. (2025). Improving Fidelity and Diversity of Population Synthesis via Latent Generative Flow. *Under Review*."
+#   featured: true
+#   order: 35

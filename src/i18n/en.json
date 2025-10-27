@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Home",
+    "publications": "Publications",
+    "teaching": "Teaching",
+    "services": "Services",
+    "cv": "CV"
+  },
+  "sections": {
+    "education": "Education",
+    "news": "News",
+    "publications": "Publications",
+    "awards": "Awards",
+    "projects": "Projects",
+    "lectures": "Lectures",
+    "supervision": "Thesis Supervision",
+    "reviewing": "Reviewing Activities",
+    "more": "More"
+  },
+  "education": {
+    "thesis": "Thesis"
+  },
+  "footer": {
+    "copyright": "@2025 {name} | Munich"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light mode",
+    "dark": "Dark mode"
+  },
+  "language": {
+    "toggle": "Toggle language"
+  },
+  "links": {
+    "paper": "Paper",
+    "code": "Code",
+    "doi": "DOI",
+    "arxiv": "arXiv",
+    "website": "Website",
+    "github": "GitHub"
+  },
+  "awards": {
+    "firstPlace": "First Place",
+    "secondPlace": "Second Place",
+    "thirdPlace": "Third Place"
+  }
+}

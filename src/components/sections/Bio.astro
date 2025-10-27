@@ -1,0 +1,33 @@
+---
+import { marked } from "marked";
+
+interface Props {
+  content: string;
+  class?: string;
+}
+
+const { content, class: className = '' } = Astro.props;
+---
+
+{content && (
+  <section class:list={['bio', className]}>
+    <div class="bio__content" set:html={marked.parse(content)}></div>
+  </section>
+)}
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .bio {
+    @apply px-4 pb-4 w-full;
+  }
+
+  .bio__content {
+    @apply text-base font-normal text-bw-primary leading-6;
+  }
+
+  .bio__content :global(p) {
+    @apply mb-2;
+  }
+</style>

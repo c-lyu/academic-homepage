@@ -1,0 +1,31 @@
+- id: bachelor-seu
+  dateRange: 2014-2018
+  institution: Southeast University
+  degree: B.Eng.
+  location: Nanjing, China
+  description: Spatial analysis of bike-sharing ridership patterns and its relationship with urban built environment
+  order: 1
+
+- id: master-seu
+  dateRange: 2018-2021
+  institution: Southeast University
+  degree: M.Eng.
+  location: Nanjing, China
+  description: Data-driven framework for dynamic urban road capacity estimation
+  order: 2
+
+- id: visit-dtu
+  dateRange: "2025"
+  institution: Technical University of Denmark
+  degree: Visiting
+  location: Lyngby, Denmark
+  # description: Tackling data sparsity and data scarcity in transportation systems
+  order: 3
+
+- id: phd-tum
+  dateRange: 2021-Now
+  institution: Technical University of Munich
+  degree: Ph.D.
+  location: Munich, Germany
+  description: Tackling data sparsity and data scarcity in transportation systems
+  order: 4

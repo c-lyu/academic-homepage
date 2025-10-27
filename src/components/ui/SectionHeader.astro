@@ -1,0 +1,32 @@
+---
+import LinkButton from './LinkButton.astro';
+
+interface Props {
+  title: string;
+  moreText?: string;
+  moreLink?: string;
+  class?: string;
+}
+
+const { title, moreText, moreLink, class: className = '' } = Astro.props;
+---
+
+<div class:list={['section-header', className]}>
+  <h2 class="section-header__title">{title}</h2>
+  {moreText && moreLink && (
+    <LinkButton href={moreLink} text={moreText} size="m" type="internal" />
+  )}
+</div>
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .section-header {
+    @apply flex items-center justify-between w-full;
+  }
+
+  .section-header__title {
+    @apply text-base font-bold text-accent-primary whitespace-nowrap;
+  }
+</style>

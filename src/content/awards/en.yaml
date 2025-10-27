@@ -1,0 +1,75 @@
+# Awards YAML
+
+# Competitions
+- id: neurips-traffic4cast-2022
+  year: '2022'
+  title: NeurIPS Traffic4cast Challenge — Extended Track
+  description: City-wide traffic forecasting with partially observed traffic sensors
+  badge:
+    icon: ri:award-line
+    text: Second Place
+  order: 9
+
+- id: kdd-cup-2020
+  year: '2020'
+  title: ACM SIGKDD — KDD Cup 2020 Reinforcement Learning Track
+  description: Dispatching and repositioning on a mobility-on-demand platform
+  badge:
+    icon: ri:award-line
+    text: First Place
+  order: 8
+
+- id: kdd-cup-2019
+  year: '2019'
+  title: ACM SIGKDD — KDD Cup 2019 Regular Machine Learning Track
+  description: Context-aware multi-modal transportation recommendation
+  badge:
+    icon: ri:award-line
+    text: Second Place
+  order: 7
+
+- id: nev-competition-2019
+  year: '2019'
+  title: National College New Energy Vehicle Big Data Innovation Competition
+  description: Electric vehicles mileage prediction
+  badge:
+    icon: ri:award-line
+    text: First Place
+  order: 6
+
+- id: bigdata-competition-2019
+  year: '2019'
+  title: National College Big Data Application Competition
+  description: Multi-task weather prediction in urban areas
+  badge:
+    icon: ri:award-line
+    text: First Place
+  order: 5
+
+- id: icme-2019
+  year: '2019'
+  title: IEEE ICME Grand Challenges on Short Video Understanding
+  description: Short video understanding and recommendation
+  badge:
+    icon: ri:award-line
+    text: Third Place
+  order: 4
+
+# Honors
+- id: distinguished-thesis-2021
+  year: '2021'
+  title: Distinguished Master Thesis
+  # badge:
+  #   icon: ri:honor-of-kings-line
+  #   text: Data-driven framework for dynamic urban road capacity estimation
+  order: 3
+
+- id: national-scholarship-2020
+  year: '2020'
+  title: National Scholarship
+  order: 2
+
+- id: national-scholarship-2019
+  year: '2019'
+  title: National Scholarship
+  order: 1

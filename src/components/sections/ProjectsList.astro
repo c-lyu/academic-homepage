@@ -1,0 +1,70 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import TimelineItem from "../ui/TimelineItem.astro";
+
+interface ProjectItem {
+  dateRange: string;
+  title: string;
+  description: string;
+  collaboration?: string;
+}
+
+interface Props {
+  title: string;
+  items: ProjectItem[];
+  class?: string;
+}
+
+const { title, items, class: className = "" } = Astro.props;
+---
+
+{items && items.length > 0 && (
+  <section class:list={["projects-list", className]}>
+    <SectionHeader title={title} />
+
+    <div class="projects-list__items">
+      {
+        items.map((item) => (
+          <TimelineItem date={item.dateRange}>
+            <div class="projects-list__item">
+              <p class="projects-list__title">{item.title}</p>
+              <p class="projects-list__description">{item.description}</p>
+              {item.collaboration && (
+                <p class="projects-list__collaboration">{item.collaboration}</p>
+              )}
+            </div>
+          </TimelineItem>
+        ))
+      }
+    </div>
+  </section>
+)}
+
+<style>
+  @import "tailwindcss";
+  @reference "../../styles/globals.css";
+
+  .projects-list {
+    @apply p-4 w-full flex flex-col gap-4;
+  }
+
+  .projects-list__items {
+    @apply flex flex-col gap-3;
+  }
+
+  .projects-list__item {
+    @apply flex flex-col gap-1 w-full;
+  }
+
+  .projects-list__title {
+    @apply text-base font-semibold text-bw-primary;
+  }
+
+  .projects-list__description {
+    @apply text-base font-normal text-bw-primary;
+  }
+
+  .projects-list__collaboration {
+    @apply text-base font-normal text-bw-secondary;
+  }
+</style>

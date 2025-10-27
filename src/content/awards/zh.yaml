@@ -1,0 +1,72 @@
+# Awards YAML
+
+# Competitions
+- id: neurips-traffic4cast-2022
+  year: '2022'
+  title: NeurIPS Traffic4cast Challenge — Extended Track
+  description: 不完整观测条件下的城市交通预测
+  badge:
+    icon: ri:award-line
+    text: 第二名
+  order: 9
+
+- id: kdd-cup-2020
+  year: '2020'
+  title: ACM SIGKDD — KDD Cup 2020 Reinforcement Learning Track
+  description: 网约车智能派遣与调度
+  badge:
+    icon: ri:award-line
+    text: 第一名
+  order: 8
+
+- id: kdd-cup-2019
+  year: '2019'
+  title: ACM SIGKDD — KDD Cup 2019 Regular Machine Learning Track
+  description: 多模态交通方式推荐
+  badge:
+    icon: ri:award-line
+    text: 第二名
+  order: 7
+
+- id: nev-competition-2019
+  year: '2019'
+  title: 全国高效新能源汽车大数据创新创业大赛
+  description: 电动汽车续驶里程预测（创新组）
+  badge:
+    icon: ri:award-line
+    text: 金奖
+  order: 6
+
+- id: bigdata-competition-2019
+  year: '2019'
+  title: 全国高校大数据应用创新大赛
+  description: 城市气象预测（大数据技术技能赛）
+  badge:
+    icon: ri:award-line
+    text: 一等奖
+  order: 5
+
+- id: icme-2019
+  year: '2019'
+  title: IEEE ICME Grand Challenges on Short Video Understanding
+  description: 短视频理解与推荐
+  badge:
+    icon: ri:award-line
+    text: 第三名
+  order: 4
+
+# Honors
+- id: distinguished-thesis-2021
+  year: '2021'
+  title: 优秀硕士论文
+  order: 3
+
+- id: national-scholarship-2020
+  year: '2020'
+  title: 国家奖学金
+  order: 2
+
+- id: national-scholarship-2019
+  year: '2019'
+  title: 国家奖学金
+  order: 1
