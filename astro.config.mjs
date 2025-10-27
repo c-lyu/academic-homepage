@@ -17,10 +17,9 @@ export default defineConfig({
       zh: 'en',
     },
     routing: {
-      prefixDefaultLocale: true,
+      prefixDefaultLocale: false,
       redirectToDefaultLocale: true,
     },
   },
-  trailingSlash: 'always',
   integrations: [sitemap()],
 });

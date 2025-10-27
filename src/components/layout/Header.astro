@@ -216,13 +216,14 @@ const otherLang = lang === "en" ? "zh" : "en";
   @reference "../../styles/globals.css";
 
   .header {
-    @apply fixed top-0 left-0 right-0;
+    @apply fixed -top-1 left-0 right-0 w-full;
     @apply min-h-(--header-mobile-height) md:min-h-(--header-height);
-    @apply border-transparent z-10 duration-200 backdrop-blur-xl bg-bw-background/50;
+    @apply border-transparent z-200 duration-200 backdrop-blur-xl bg-bw-background/50;
   }
 
   .header__content {
-    @apply flex items-center justify-between h-12 mx-10 mt-6 md:mx-24 md:mt-12;
+    @apply z-200 flex items-center justify-between;
+    @apply h-12 ml-10 mr-6 mt-6 md:mx-28 md:mt-12;
   }
 
   .header__logo {
@@ -230,7 +231,7 @@ const otherLang = lang === "en" ? "zh" : "en";
   }
 
   .header__right {
-    @apply flex items-center gap-4;
+    @apply flex items-center gap-0 md:gap-4;
   }
 
   .header__nav {
@@ -305,7 +306,7 @@ const otherLang = lang === "en" ? "zh" : "en";
 
   .mobile-menu__item {
     @apply text-base text-bw-primary no-underline;
-    @apply px-4 py-2 mx-0 -my-2 border-b border-bw-surface;
+    @apply px-0 py-2 mx-0 -my-2 border-b border-bw-surface;
     @apply transition-all duration-200 ease-in-out hover:bg-bw-primary hover:text-bw-background;
   }
 </style>

@@ -4,12 +4,13 @@ interface Props {
 }
 
 const { name } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer" transition:persist="footer">
   <div class="footer__content">
     <p>
-      <span class="footer__text">@2025</span>
+      <span class="footer__text">@{currentYear}</span>
       <span class="footer__name">{name}</span>
     </p>
   </div>
@@ -20,8 +21,8 @@ const { name } = Astro.props;
   @reference "../../styles/globals.css";
 
   .footer {
-    @apply relative mt-auto mb-4;
-    @apply h-(--footer-height) flex items-center justify-center;
+    @apply relative mt-auto mb-2 md:mb-4 h-(--footer-height);
+    @apply flex items-center justify-center;
     @apply bg-bw-background/50 border-t border-bw-surface;
     @apply bg-(image:--pattern-bg) bg-size-(--pattern-size);
   }

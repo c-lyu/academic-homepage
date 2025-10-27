@@ -3,7 +3,7 @@ import { getEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MainLayout from "../../components/layout/MainLayout.astro";
 import ContentSection from "../../components/sections/ContentSection.astro";
-import { useTranslations, type Language, getLocalizedPath } from "../../i18n";
+import { useTranslations, type Language } from "../../i18n";
 
 export async function getStaticPaths() {
   return [{ params: { lang: "en" } }, { params: { lang: "zh" } }];

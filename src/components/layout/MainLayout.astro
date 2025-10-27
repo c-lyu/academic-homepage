@@ -19,32 +19,27 @@ interface Props {
   contacts: Contact[];
 }
 
-const {
-  name,
-  lang,
-  currentPath = "/",
-  photo,
-  contacts,
-} = Astro.props;
+const { name, lang, currentPath = "/", photo, contacts } = Astro.props;
 ---
 
 <div class="layout">
   <Header name={name} lang={lang} currentPath={currentPath} />
 
-  <div class="layout__container">
-    <!-- <Sidebar photo={photo} contacts={contacts} class="layout__sidebar" /> -->
-    <div class="layout__sidebar">
-      <Sidebar photo={photo} contacts={contacts} />
+  <div class="main__container">
+    <div class="layout__container">
+      <div class="layout__sidebar">
+        <Sidebar photo={photo} contacts={contacts} />
+      </div>
+
+      <main class="layout__main">
+        <slot />
+      </main>
+
+      <div class="layout__spacer"></div>
     </div>
 
-    <main class="layout__main">
-      <slot />
-    </main>
-
-    <div class="layout__spacer"></div>
+    <Footer name={name} />
   </div>
-
-  <Footer name={name}/>
 </div>
 
 <style>
@@ -52,11 +47,17 @@ const {
   @reference "../../styles/globals.css";
 
   .layout {
-    @apply min-h-screen flex flex-col bg-bw-background;
+    @apply m-0 p-0 flex flex-col;
+    @apply min-h-[calc(100vh-8px)] md:min-h-[calc(100vh-16px)];
+  }
+
+  .main__container {
+    @apply flex flex-col grow justify-between;
   }
 
   .layout__container {
-    @apply w-full px-6 pt-24 pb-10 flex flex-col gap-8;
+    @apply w-full flex flex-col;
+    @apply px-8 pt-20 pb-10 gap-8;
     @apply md:px-24 md:pt-36 md:pb-24 md:grid md:gap-4;
     @apply md:grid-cols-[200px_1fr];
     @apply xl:grid-cols-[minmax(auto,200px)_1fr_minmax(auto,200px)];
@@ -64,7 +65,8 @@ const {
 
   .layout__sidebar {
     @apply w-full h-fit shrink-0;
-    @apply md:sticky md:top-36 md:self-start md:w-auto;
+    @apply md:w-auto md:self-start;
+    @apply md:sticky md:top-40;
   }
 
   .layout__main {

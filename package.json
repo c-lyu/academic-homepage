@@ -6,7 +6,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "analyze-fonts": "glyphhanger http://localhost:4321/academic-homepage/en",
+    "subset-fonts": "glyphhanger http://localhost:4321/academic-homepage/en --spider --spider-limit=20 --subset=archive/fonts/*.ttf --formats=woff2",
+    "move-fonts": "./scripts/move-fonts.sh",
+    "prepare-fonts": "pnpm subset-fonts && pnpm move-fonts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
@@ -15,10 +19,13 @@
     "astro": "^5.15.1",
     "iconify-icon": "^3.0.1",
     "marked": "^16.4.1",
-    "sharp": "^0.34.4"
+    "sharp": "^0.34.4",
+    "ufo": "^1.6.1"
   },
   "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
   "devDependencies": {
+    "glyphhanger": "^5.0.0",
+    "puppeteer": "^24.26.1",
     "tailwindcss": "^4.1.16"
   }
 }

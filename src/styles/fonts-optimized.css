@@ -16,21 +16,21 @@
 
 /* Latin subset - loads for ASCII characters */
 @font-face {
-  font-family: "IBM Plex Sans";
+  font-family: "IPS";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/IBMPlexSans-Regular.woff2") format("woff2");
+  src: url("academic-homepage/fonts/IBMPlexSans-Regular.woff2") format("woff2");
   unicode-range: U+0020-007F; /* Basic Latin: A-Z, a-z, 0-9, punctuation */
 }
 
 /* Latin Extended - loads when needed (accents, special chars) */
 @font-face {
-  font-family: "IBM Plex Sans";
+  font-family: "IPS";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/IBMPlexSans-Regular.woff2") format("woff2");
+  src: url("academic-homepage/fonts/IBMPlexSans-Regular.woff2") format("woff2");
   unicode-range: U+0080-00FF, U+0100-017F, U+0180-024F; /* Extended Latin */
 }
 
@@ -39,20 +39,20 @@
    ======================================== */
 
 @font-face {
-  font-family: "IBM Plex Sans";
+  font-family: "IPS";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/IBMPlexSans-Italic.woff2") format("woff2");
+  src: url("academic-homepage/fonts/IBMPlexSans-Italic.woff2") format("woff2");
   unicode-range: U+0020-007F;
 }
 
 @font-face {
-  font-family: "IBM Plex Sans";
+  font-family: "IPS";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/IBMPlexSans-Italic.woff2") format("woff2");
+  src: url("academic-homepage/fonts/IBMPlexSans-Italic.woff2") format("woff2");
   unicode-range: U+0080-00FF, U+0100-017F, U+0180-024F;
 }
 
@@ -61,20 +61,20 @@
    ======================================== */
 
 @font-face {
-  font-family: "IBM Plex Sans";
+  font-family: "IPS";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("/fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+  src: url("academic-homepage/fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
   unicode-range: U+0020-007F;
 }
 
 @font-face {
-  font-family: "IBM Plex Sans";
+  font-family: "IPS";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("/fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+  src: url("academic-homepage/fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
   unicode-range: U+0080-00FF, U+0100-017F, U+0180-024F;
 }
 
@@ -83,20 +83,20 @@
    ======================================== */
 
 @font-face {
-  font-family: "IBM Plex Sans";
+  font-family: "IPS";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/fonts/IBMPlexSans-Bold.woff2") format("woff2");
+  src: url("academic-homepage/fonts/IBMPlexSans-Bold.woff2") format("woff2");
   unicode-range: U+0020-007F;
 }
 
 @font-face {
-  font-family: "IBM Plex Sans";
+  font-family: "IPS";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/fonts/IBMPlexSans-Bold.woff2") format("woff2");
+  src: url("academic-homepage/fonts/IBMPlexSans-Bold.woff2") format("woff2");
   unicode-range: U+0080-00FF, U+0100-017F, U+0180-024F;
 }
 

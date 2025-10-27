@@ -4,8 +4,8 @@ import TimelineItem from "../ui/TimelineItem.astro";
 import Icon from "../ui/Icon.astro";
 
 interface AwardBadge {
-  icon: string;
-  text: string;
+  icon?: string;
+  text?: string;
 }
 
 interface AwardItem {
@@ -60,7 +60,7 @@ const { title, items, class: className = "" } = Astro.props;
   @reference "../../styles/globals.css";
 
   .awards-list {
-    @apply p-4 w-full flex flex-col gap-4;
+    @apply w-full flex flex-col gap-4;
   }
 
   .awards-list__items {

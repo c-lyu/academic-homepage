@@ -1,3 +1,4 @@
+import { joinURL, cleanDoubleSlashes } from 'ufo';
 import en from "./en.json";
 import zh from "./zh.json";
 
@@ -37,10 +38,5 @@ export function useTranslations(lang: Language) {
 export function getLocalizedPath(path: string, lang: Language): string {
   // Get the base path from import.meta.env
   const base = import.meta.env.BASE_URL || '/';
-  const basePath = base.endsWith('/') ? base.slice(0, -1) : base;
-
-  // Always add language prefix for all locales (prefixDefaultLocale: true)
-  // Ensure path ends with trailing slash (for trailingSlash: 'always' config)
-  const normalizedPath = path.endsWith('/') ? path : `${path}/`;
-  return `${basePath}/${lang}${normalizedPath}`;
+  return cleanDoubleSlashes(joinURL(base, lang, path));
 }

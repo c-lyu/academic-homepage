@@ -1,9 +1,9 @@
-@import "./fonts-optimized.css";
+/* @import "./fonts-optimized.css"; */
 @import "tailwindcss";
 
 /* Reset and base styles */
 * {
-  @apply m-0 p-0 box-border;
+  @apply box-border hyphens-auto duration-200 transition-all;
 }
 
 @theme {
@@ -14,19 +14,18 @@
   --color-bw-surface: oklch(0.26 0 0 / 10%);
   --color-bw-surface-hover: oklch(0.26 0 0 / 15%);
 
-  --color-accent-primary: oklch(0.75 0.33 253);
-  --color-accent-surface: oklch(0.75 0.33 253 / 10%);
+  --color-accent-primary: rgb(0, 162, 255);
 
   --color-badge-primary: oklch(0.76 0.16 73);
 
   /* Typography */
-  --font-display: "IBM Plex Sans", Roboto, "Helvetica Neue", Arial, "Segoe UI",
+  --font-display: "IPS", Roboto, "Helvetica Neue", Arial, "Segoe UI",
     "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system,
     BlinkMacSystemFont, sans-serif;
 
   /* Layout */
   --sidebar-width: 126px;
-  --content-max-width: 700px;
+  --content-max-width: 720px;
   --header-height: 100px;
   --header-mobile-height: 70px;
   --footer-height: 60px;
@@ -56,52 +55,12 @@
 
 /* Base styles */
 html {
-  @apply font-display text-base text-bw-primary bg-bw-background hyphens-auto;
-  @apply duration-200 transition-colors scroll-smooth;
-}
-
-/* Fill iOS Safari top safe area with frame color */
-@media (max-width: 768px) {
-  html {
-    @apply bg-accent-primary;
-  }
-
-  body {
-    @apply bg-bw-background;
-  }
+  @apply h-full bg-bw-background;
+  @apply font-display text-base text-bw-primary;
 }
 
 body {
-  @apply min-h-screen overflow-x-hidden;
-}
-
-body::before {
-  @apply content-[''] fixed top-0 left-0 right-0 bottom-0;
-  @apply border-16 border-accent-primary pointer-events-none z-9999;
-}
-
-/* On mobile, split frame into separate borders to keep top fixed */
-@media (max-width: 768px) {
-  body {
-    @apply relative;
-  }
-
-  /* Remove the single border frame */
-  body::before {
-    @apply border-0;
-  }
-
-  /* Top border - stays fixed */
-  body::before {
-    @apply content-[''] fixed top-0 left-0 right-0 h-0;
-    @apply border-t-16 border-accent-primary pointer-events-none z-9999;
-  }
-
-  /* Left, right, bottom borders - absolute positioning */
-  body::after {
-    @apply content-[''] absolute top-0 left-0 right-0 bottom-0;
-    @apply border-l-16 border-r-16 border-b-16 border-accent-primary pointer-events-none z-9999;
-  }
+  @apply min-h-screen px-2 md:px-4 pt-3 md:pt-4;
 }
 
 /* Typography */

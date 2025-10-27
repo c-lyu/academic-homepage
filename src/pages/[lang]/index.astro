@@ -69,7 +69,7 @@ const awardItems = awards.map((a) => ({
   year: a.data.year,
   title: a.data.title,
   description: a.data.description,
-  badge: a.data.badge
+  badge: a.data.badge || undefined
 }));
 
 // const projectItems = projects.map((p) => ({
