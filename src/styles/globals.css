@@ -69,6 +69,17 @@ body::before {
   @apply border-16 border-accent-primary pointer-events-none z-9999;
 }
 
+/* On mobile, use absolute positioning to prevent iOS overflow issues */
+@media (max-width: 768px) {
+  body {
+    @apply relative;
+  }
+
+  body::before {
+    @apply absolute;
+  }
+}
+
 /* Typography */
 h1,
 h2,
