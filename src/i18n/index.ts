@@ -35,5 +35,10 @@ export function useTranslations(lang: Language) {
 }
 
 export function getLocalizedPath(path: string, lang: Language): string {
-  return `/${lang}${path}`;
+  // Get the base path from import.meta.env
+  const base = import.meta.env.BASE_URL || '/';
+  const basePath = base.endsWith('/') ? base.slice(0, -1) : base;
+
+  // Always add language prefix for all locales (prefixDefaultLocale: true)
+  return `${basePath}/${lang}${path}`;
 }
