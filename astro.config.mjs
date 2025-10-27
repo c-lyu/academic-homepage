@@ -6,6 +6,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://c-lyu.github.io/academic-homepage',
+  base: '/academic-homepage',
   vite: {
     plugins: [tailwindcss()]
   },
