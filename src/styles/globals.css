@@ -60,6 +60,17 @@ html {
   @apply duration-200 transition-colors scroll-smooth;
 }
 
+/* Fill iOS Safari top safe area with frame color */
+@media (max-width: 768px) {
+  html {
+    @apply bg-accent-primary;
+  }
+
+  body {
+    @apply bg-bw-background;
+  }
+}
+
 body {
   @apply min-h-screen overflow-x-hidden;
 }
