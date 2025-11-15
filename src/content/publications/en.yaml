@@ -343,12 +343,12 @@
   featured: true
   order: 34
 
-# - id: 2025-flowsyn-trc
-#   date: 2025
-#   year: 2025
-#   authors: Lyu, C., Wu, H., Li, D., Pereira, F. C., Azevedo, C. M. A., & Antoniou, C.
-#   title: Improving Fidelity and Diversity of Population Synthesis via Latent Generative Flow
-#   venue: Under Review
-#   citation: "**Lyu, C.**, Wu, H., Li, D., Pereira, F. C., Azevedo, C. M. A., & Antoniou, C. (2025). Improving Fidelity and Diversity of Population Synthesis via Latent Generative Flow. *Under Review*."
-#   featured: true
-#   order: 35
+- id: 2025-flowsyn-trc
+  date: 2025
+  year: 2025
+  authors: Lyu, C., Wu, H., Li, D., Pereira, F. C., Azevedo, C. M. A., & Antoniou, C.
+  title: Improving Fidelity and Diversity of Population Synthesis via Latent Generative Flow
+  venue: Under Review
+  citation: "**Lyu, C.**, Wu, H., Li, D., Pereira, F. C., Azevedo, C. M. A., & Antoniou, C. (2025). Improving Fidelity and Diversity of Population Synthesis via Latent Generative Flow. *Under Review*."
+  featured: true
+  order: 35
